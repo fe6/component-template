@@ -28,8 +28,8 @@ module.exports = {
     extensions: ['.js', '.md', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
-      'assets': resolve('src/assets'),
+      '@': resolve('site'),
+      'assets': resolve('site/assets'),
     }
   },
   performance: {
@@ -53,7 +53,7 @@ module.exports = {
         test: /\.(js|vue)$/,
         loader: 'eslint',
         enforce: 'pre',
-        include: [resolve('src')],
+        include: [resolve('site')],
         options: {
           cache: true,
           fix: true,
@@ -68,7 +68,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel?cacheDirectory',
-        include: [resolve('src')],
+        include: [resolve('site')],
         exclude: [resolve('node_modules')],
       },
       {

@@ -20,12 +20,4 @@ gulp.task( 'compile', function() {
       .pipe( gulp.dest( '../dist/' ) );
 } );
 
-// gulp.task( 'copysass', function() {
-//   return gulp.src( '../src/styles/**' ).pipe( cssmin() ).pipe( gulp.dest( '../dist/static/sass' ) );
-// } );
-//
-// gulp.task( 'copyfont', function() {
-//   return gulp.src( '../src/styles/iconfont/fonts/**' ).pipe( cssmin() ).pipe( gulp.dest( '../dist/static/css/iconfont/fonts' ) );
-// } );
-
 gulp.task( 'default', [ 'compile' ] );
