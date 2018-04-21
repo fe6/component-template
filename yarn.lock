@@ -745,6 +745,12 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-plugin-dynamic-import-node@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-1.2.0.tgz#f91631e703e0595e47d4beafbb088576c87fbeee"
+  dependencies:
+    babel-plugin-syntax-dynamic-import "^6.18.0"
+
 babel-plugin-dynamic-import-webpack@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-webpack/-/babel-plugin-dynamic-import-webpack-1.0.2.tgz#cb83435833e073f1600c0188a95edacfdc07c256"
@@ -788,6 +794,10 @@ babel-plugin-syntax-dynamic-import@^6.18.0:
 babel-plugin-syntax-exponentiation-operator@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
+
+babel-plugin-syntax-jsx@^6.18.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
 
 babel-plugin-syntax-object-rest-spread@^6.13.0, babel-plugin-syntax-object-rest-spread@^6.8.0:
   version "6.13.0"
@@ -1033,6 +1043,12 @@ babel-plugin-transform-strict-mode@^6.24.1:
   dependencies:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
+
+babel-plugin-transform-vue-jsx@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-vue-jsx/-/babel-plugin-transform-vue-jsx-3.7.0.tgz#d40492e6692a36b594f7e9a1928f43e969740960"
+  dependencies:
+    esutils "^2.0.2"
 
 babel-polyfill@6.7.4:
   version "6.7.4"
@@ -1990,6 +2006,14 @@ concat-with-sourcemaps@*:
   resolved "https://registry.yarnpkg.com/concat-with-sourcemaps/-/concat-with-sourcemaps-1.0.5.tgz#8964bc2347d05819b63798104d87d6e001bed8d0"
   dependencies:
     source-map "^0.6.1"
+
+condense-newlines@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/condense-newlines/-/condense-newlines-0.2.1.tgz#3de985553139475d32502c83b02f60684d24c55f"
+  dependencies:
+    extend-shallow "^2.0.1"
+    is-whitespace "^0.3.0"
+    kind-of "^3.0.2"
 
 config-chain@~1.1.5:
   version "1.1.11"
@@ -4735,6 +4759,10 @@ is-whitespace-character@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-whitespace-character/-/is-whitespace-character-1.0.1.tgz#9ae0176f3282b65457a1992cdb084f8a5f833e3b"
 
+is-whitespace@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/is-whitespace/-/is-whitespace-0.3.0.tgz#1639ecb1be036aec69a54cbb401cfbed7114ab7f"
+
 is-windows@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-0.2.0.tgz#de1aa6d63ea29dd248737b69f1ff8b8002d2108c"
@@ -5054,6 +5082,12 @@ jest-runtime@^22.4.3:
     write-file-atomic "^2.1.0"
     yargs "^10.0.3"
 
+jest-serializer-vue@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jest-serializer-vue/-/jest-serializer-vue-1.0.0.tgz#82514e9b3d94a17fe618df3ede84046090f94815"
+  dependencies:
+    pretty "2.0.0"
+
 jest-serializer@^22.4.3:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/jest-serializer/-/jest-serializer-22.4.3.tgz#a679b81a7f111e4766235f4f0c46d230ee0f7436"
@@ -5108,7 +5142,7 @@ js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
 
-js-beautify@^1.6.14:
+js-beautify@^1.6.12, js-beautify@^1.6.14:
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/js-beautify/-/js-beautify-1.7.5.tgz#69d9651ef60dbb649f65527b53674950138a7919"
   dependencies:
@@ -7844,6 +7878,14 @@ pretty-format@^22.4.3:
 pretty-hrtime@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
+
+pretty@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/pretty/-/pretty-2.0.0.tgz#adbc7960b7bbfe289a557dc5f737619a220d06a5"
+  dependencies:
+    condense-newlines "^0.2.1"
+    extend-shallow "^2.0.1"
+    js-beautify "^1.6.12"
 
 private@^0.1.6, private@^0.1.7:
   version "0.1.8"
