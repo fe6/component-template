@@ -11,7 +11,7 @@
     "eslint": "eslint --ext .js,.vue src water --fix",
     "stylelint": "stylelint src/**/*.scss water/**/*.scss",
     "lint-staged": "lint-staged",
-    "test": "jest --config jest.conf.js --coverage --no-cache",
+    "test": "jest --config jest.conf.js --no-cache",
     "codecov": "codecov ./coverage/clover.xml"
   },
   "dependencies": {

@@ -1,6 +1,5 @@
-// import Vue from 'vue';
 import { mount } from 'vue-test-utils';
-import Icon from '../water/icon/Icon';
+import Icon from './Icon';
 
 describe('Icon.vue', () => {
   let wrapper = null;
