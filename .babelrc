@@ -1,7 +1,6 @@
 {
   "presets": [
     ["env", {
-      "modules": false,
       "targets": {
         "browsers": [
           "> 1%",
@@ -18,7 +17,11 @@
   "env": {
     "development": {
       "plugins": [
-        "transform-runtime",
+        ["transform-runtime", {
+          "helpers": true,
+          "polyfill": true,
+          "regenerator": true
+        }],
         ["transform-strict-mode", {
           "strict": false
         }],
@@ -27,7 +30,11 @@
     },
     "production": {
       "plugins": [
-        "transform-runtime",
+        ["transform-runtime", {
+          "helpers": false,
+          "polyfill": true,
+          "regenerator": true
+        }],
         ["transform-strict-mode", {
           "strict": false
         }],

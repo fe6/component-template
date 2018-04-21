@@ -8,9 +8,7 @@ module.exports = {
   },
   env: {
     browser: true,
-  },
-  globals: {
-    "GADEWAY": true,
+    jest: true,
   },
   extends: "airbnb-base",
   // required to lint *.vue files

@@ -4,8 +4,8 @@
 
 ## 需要的环境
 
-- node.js >= 4.0.0
-- npm >= 3.0.0
+- node.js >= 9.0.0
+- npm >= 5.0.0
 
 ## npm 淘宝镜像
 
@@ -33,137 +33,36 @@
 npm install ( npm i )
 
 # development 环境的本地热加载服务，访问地址: localhost:8080
+# 在 config 中修改端口号
 npm start
 
-# testing 环境的本地热加载服务，访问地址: localhost:8080
-npm run dev:test
-
-# production 环境的本地热加载服务，访问地址: localhost:8080
-npm run dev:pro
-
-# production 环境，打包
+# 利用 jest 单元测试
+npm test
+# 打包官网
 npm run build
 
-# testing 环境，打包
-npm run build:test
-
-# production 环境，打包并查看捆绑分析器报表
+# 打包官网，打包并查看捆绑分析器报表
 npm run build --report
 
+# 打包组件库
+npm run build:water
+
 # JavaScript 的代码规范监测
-npm run lint
+npm run eslint
+
+# style 的代码规范监测
+npm run stylelint
+
+# 进行 style 和 JavaScript 的规范检测
+npm run lint-staged
+
+# 上传单元测试覆盖率报告
+npm run codecov
 ```
-
-## 各命令所干的事情
-
-### `npm run dev`
-
-> ( **development** 环境的本地热加载服务，访问地址: [localhost:8080](localhost:8080))
-
-  - Webpack2 + vue-loader 编译单个文件Vue的组件。
-  - 状态保存热重新加载
-  - 状态保存编译错误覆盖
-
-### `npm run dev:test`
-
-> ( **testing** 环境的本地热加载服务，访问地址: [localhost:8080](localhost:8080))
-
-  - Webpack2 + vue-loader 编译单个文件Vue的组件。
-  - 状态保存热重新加载
-  - 状态保存编译错误覆盖
-
-### `npm run dev:test`
-
-> ( **production** 环境的本地热加载服务，访问地址: [localhost:8080](localhost:8080))
-
-  - Webpack2 + vue-loader 编译单个文件Vue的组件。
-  - 状态保存热重新加载
-  - 状态保存编译错误覆盖
-
-### `npm run build`
-
-> ( **production** 环境，打包)
-
-  - 用 [UglifyJS](https://github.com/mishoo/UglifyJS2) 缩小了JavaScript
-  - HTML用 [html-minifier](https://github.com/kangax/html-minifier) 缩小
-  - 将所有组件的CSS提取到单个文件中，并用 [cssnano](https://github.com/ben-eb/cssnano) 进行缩小
-  - 使用版本散列编辑的所有静态资产都可以进行高效的长期缓存，并且生成index.html是通过自动生成的，适用于
-    这些生成的资产。
-  - 用 `npm run build --report` 带有分析功能
-
-### `npm run build:test`
-
-> ( **testing** 环境，打包)
-
-  - 用 [UglifyJS](https://github.com/mishoo/UglifyJS2) 缩小了JavaScript
-  - HTML用 [html-minifier](https://github.com/kangax/html-minifier) 缩小
-  - 将所有组件的CSS提取到单个文件中，并用 [cssnano](https://github.com/ben-eb/cssnano) 进行缩小
-  - 使用版本散列编辑的所有静态资产都可以进行高效的长期缓存，并且生成index.html是通过自动生成的，适用于
-    这些生成的资产。
-  - 用 `npm run build --report` 带有分析功能
-
-### `npm run unit`
-
-> 用 [Karma](http://karma-runner.github.io/0.13/index.html) + [Mocha](http://mochajs.org) + [karma-webpack](https://github.com/webpack/karma-webpack) 运行在 PhantomJS 中的单元测试
-
-  - 测试文件中支持 ES2015
-  - 支持 Webpack 所有的 Loaders
-  - 轻松模拟注入
-
-### `npm run e2e`
-
-> 用 [Nightwatch](http://nightwatchjs.org) 端对端测试
-
-  - 在多个浏览器中并行运行测试
-  - 与一个命令开箱即用
-    - Selenium 和 Chromedriver 依赖关系自动处理
-  - 自动派生的 Selenium 的服务
-
-### `npm run lint`
-
->用 [eslint](http://eslint.cn) 语法规范检测
-
-  - 在 `.eslintrc.js` 中可自定义规范
-  - 在 `.eslintignore` 中可自定义不检查规范的文件及文件夹
 
 ## 修改热加载服务的端口
 
 在 `/config/index.js` 文件中修改
-
-## 模板包含的功能
-
-- [SPA ( single-page application )](http://zhaoda.net/spa/docs)，需要 SEO 的项目请绕行
-- 每个模块按需加载
-- 每个模糊拥有缓存功能，不刷新的情况下，第二次进入不重复加载
-- 页面之间切换，顶部有进度条功能
-- 将 Axios 挂载到 Vue 对象上，并利用 Axios 获取数据
-- 数据请求拦截，自动跳到 `/error`
-- 利用 Vuex 实现购物车小例子
-- 实现 currency 过滤器
-
-## 环境及接口
-
-- 模板的环境
-
-  - 开发环境( **development** )
-  - 测试环境( **testing** )
-  - 生成环境( **production** )
-
-
-- 环境及接口的添加和修改
-
-  在 `config/constant.env.js` 中是接口和环境的常量
-
-
-- 不同环境中的接口修改
-
-  ```bash
-  └── config/                      # 模板项目中的各种说明
-      ├── index.js                 # 打包和开发的个性化配置
-      ├── dev.env.js               # 开发 环境的接口
-      ├── test.env.js              # 测试 环境的接口
-      └── prod.env.js              # 生产 环境的接口
-  ```
 
 ## 技术资源
 
