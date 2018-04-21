@@ -1,14 +1,16 @@
 var path = require('path');
 var chalk = require('chalk');
+var webpack = require('webpack');
 // 百分比进度
-var ProgressBarPlugin = require('progress-bar-webpack-plugin');
-var os = require('os');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 var utils = require('./utils');
-var config = require('../config');
 var vueLoaderConfig = require('./vue-loader.conf');
 var md = require('./markdown');
+// 公共的 banner
+var banner = require( './banner' )();
+
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -16,15 +18,11 @@ function resolve (dir) {
 
 module.exports = {
   cache: true,
-  entry: './src/main.js',
+  entry: `./${utils.outname()}/water.js`,
   mode: 'development',
   output: {
-    path: config.build.assetsRoot,
-    filename: '[name].js',
-    chunkFilename: '[id].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+    publicPath: '/dist/',
+    library: utils.outname(),
   },
   resolve: {
     extensions: ['.js', '.md', '.vue', '.json'],
@@ -40,13 +38,17 @@ module.exports = {
   resolveLoader: {
     moduleExtensions: ['-loader']
   },
+  externals: {
+    vue: {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
+    },
+  },
+  mode: 'development',
   module: {
     rules: [
-      {
-        test: /\.md$/,
-        loader: 'vue-markdown',
-        options: md
-      },
       {
         test: /\.(js|vue)$/,
         loader: 'eslint',
@@ -65,7 +67,9 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel?cacheDirectory', exclude: /node_modules/
+        loader: 'babel?cacheDirectory',
+        include: [resolve('src')],
+        exclude: [resolve('node_modules')],
       },
       {
         test: /\.(png|jpe?g|gif)(\?.*)?$/,
@@ -89,5 +93,7 @@ module.exports = {
     new ProgressBarPlugin({
       format: '📦  '+ chalk.blue('构建进度:') + ' '+ chalk.redBright.bold('[:bar]') + ' ' + chalk.magentaBright.bold(':percent') + ' ' + chalk.magentaBright.bold(':elapsed seconds'),
     }),
-  ],
+    // 注入内容
+    new webpack.BannerPlugin( banner )
+  ]
 }

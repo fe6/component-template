@@ -31,6 +31,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
+  mode: 'production',
   optimization: {
     removeAvailableModules: true,
     removeEmptyChunks: true,
