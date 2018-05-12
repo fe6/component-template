@@ -1,5 +1,7 @@
 # component-template
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fe6/component-template.svg)](https://greenkeeper.io/)
+
 > Vue.js 组件库模板
 
 ## 需要的环境
