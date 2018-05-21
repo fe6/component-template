@@ -4,8 +4,8 @@
 <script>
 export default {
   name: 'WIcon',
-  data () {
-    return {}
-  }
-}
+  data() {
+    return {};
+  },
+};
 </script>
