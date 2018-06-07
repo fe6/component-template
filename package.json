@@ -15,7 +15,7 @@
     "test": "jest --config jest.conf.js --no-cache --verbose",
     "codecov": "codecov ./coverage/clover.xml"
   },
-  "dependencies": {
+  "devDependencies": {
     "babel-helpers": "^6.24.1",
     "babel-jest": "^22.4.3",
     "babel-plugin-dynamic-import-node": "^1.2.0",
@@ -54,9 +54,7 @@
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.1",
     "vue-test-utils": "^1.0.0-beta.11",
-    "vuepress": "^0.8.4"
-  },
-  "devDependencies": {
+    "vuepress": "^0.8.4",
     "autoprefixer": "^8.2.0",
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
