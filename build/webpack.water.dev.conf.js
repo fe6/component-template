@@ -12,6 +12,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: '#source-map',
   output: {
     filename: utils.outname() + '.js',
+    library: utils.outname(),
   },
   plugins: [
     new CopyWebpackPlugin([
