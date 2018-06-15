@@ -1,7 +1,8 @@
 # 组件库模板
 
->一套企业级的 UI 设计语言和 Vue.js 实现。
+> Vue.js 组件库模板
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fe6/component-template.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/fe6/component-template.svg?branch=master)](https://travis-ci.org/fe6/component-template)
 [![Codecov 单元测试覆盖率](https://img.shields.io/codecov/c/github/fe6/component-template/master.svg?style=flat)](https://codecov.io/gh/fe6/component-template/branch/master)
 
