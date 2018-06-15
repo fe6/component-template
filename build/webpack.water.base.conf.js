@@ -20,8 +20,10 @@ module.exports = {
   entry: `./${utils.outname()}/water.js`,
   mode: 'development',
   output: {
+    path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
-    library: utils.outname(),
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   resolve: {
     extensions: ['.js', '.md', '.vue', '.json'],

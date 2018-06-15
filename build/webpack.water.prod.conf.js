@@ -13,6 +13,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: '#source-map',
   output: {
     filename: utils.outname() + '.min.js',
+    library: utils.outname(),
   },
   mode: 'production',
   optimization: {
